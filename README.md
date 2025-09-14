@@ -92,7 +92,7 @@ If you are an EPITA student, you are **not allowed** to access or use this repos
 
 ---
 
-### 🔹 SSSE-CLOUD-Project  
+### 🔹 CLOUD-Project  
 - **Period**: April – June 2025  
 - **Team size**: 2  
 - **Description**: A telemetry frame integrity checker.
