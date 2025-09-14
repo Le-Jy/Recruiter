@@ -1,0 +1,5 @@
+let
+  var caca := _cast(2, string)
+in
+  print_int(caca)
+end

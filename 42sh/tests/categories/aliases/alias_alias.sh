@@ -1,0 +1,2 @@
+alias alias=ls
+alias

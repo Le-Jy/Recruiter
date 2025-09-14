@@ -1,0 +1,3 @@
+alias if="ls"
+
+if

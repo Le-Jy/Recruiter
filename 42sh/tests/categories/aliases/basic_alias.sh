@@ -1,0 +1,3 @@
+alias foo=ls
+
+foo

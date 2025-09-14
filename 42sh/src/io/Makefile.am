@@ -1,0 +1,5 @@
+lib_LIBRARIES = libio.a
+
+libio_a_SOURCES = io.c io.h
+libio_a_CFLAGS = -std=c99 -pedantic -Werror -Wall -Wextra -Wvla
+libio_a_CPPFLAGS = -I$(top_srcdir)/src

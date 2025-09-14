@@ -1,0 +1,41 @@
+let
+  type node = {}
+  function append(list : node, element : int) =
+    (
+      while list.next <> nil do
+        (
+        list := list.next
+        );
+        list.next := node {value = element, next = nil}
+    )
+  function display(list : node) =
+  (
+    while list.next <> nil  do
+      (
+        print_int(list.value);
+        print(" -> ");
+        list := list.next
+      );
+    print_int(list.value)  
+  )
+  var list := node { value = 0, next = nil }
+  function test_lists(expected: string) =
+    (
+      print(concat("Expected : { ", expected));
+      print(" }\ngot      : { ");
+      display(list);
+      print(" }\n\n")
+    )
+in
+  test_lists("0");
+
+  print("Adding '1' ...\n");
+  append(list, 1);
+
+  test_lists("0 -> 1");
+
+  print("Adding '2' ...\n");
+  append(list, 2);
+
+  test_lists("0 -> 1 -> 2")
+end

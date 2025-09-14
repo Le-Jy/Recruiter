@@ -1,0 +1,5 @@
+alias funcdec="foo("
+
+funcdec) { echo "ok"; }
+
+foo

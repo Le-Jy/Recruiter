@@ -1,0 +1,6 @@
+let
+  function fibo(n : int, m : int): int =
+    n
+in
+  print_int(fibo("caca", 2))
+end

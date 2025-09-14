@@ -1,0 +1,233 @@
+openapi: 3.0.3
+info:
+  version: "1.0.0"
+  title: "insIDE API"
+servers:
+  - url: http://localhost:8080
+    description: Used with quarkus dev
+
+paths:
+  /api/open/project:
+    post:
+      summary: "Open a project"
+      requestBody:
+        description: "Path of the project"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PathRequest'
+      responses:
+        200:
+          description: "Project opened"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectResponse'
+        404:
+          description: "Path of folder do not exists"
+        400:
+          description: "Bad request: Path is not an folder"
+
+  /api/open/file:
+    post:
+      summary: "Open a file"
+      requestBody:
+        description: "Path of the file"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PathRequest'
+      responses:
+        200:
+          description: "File opened"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NodeResponse'
+        404:
+          description: "Path of file do not exists"
+        400:
+          description: "Bad request: Path is not a file"
+
+  /api/create/file:
+    post:
+      summary: "Create a file"
+      requestBody:
+        description: "Path of the file"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PathRequest'
+      responses:
+        200:
+          description: "File created"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NodeResponse'
+        400:
+          description: "Bad request or path do not have parent"
+
+  /api/create/folder:
+    post:
+      summary: "Create a folder"
+      requestBody:
+        description: "Path of the folder"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PathRequest'
+      responses:
+        200:
+          description: "Folder created"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NodeResponse'
+        400:
+          description: "Bad request or path do not have parent"
+
+  /api/delete/folder:
+    post:
+      summary: "Delete a folder"
+      requestBody:
+        description: "Path of the folder"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PathRequest'
+      responses:
+        200:
+          description: "Folder deleted"
+        404:
+          description: "Path of folder do not exists"
+        400:
+          description: "Bad request: Path is not a folder"
+
+  /api/delete/file:
+    post:
+      summary: "Delete a file"
+      requestBody:
+        description: "Path of the file"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PathRequest'
+      responses:
+        200:
+          description: "File deleted"
+        404:
+          description: "Path of file do not exists"
+        400:
+          description: "Bad request: Path is not a file"
+
+  /api/execFeature:
+    post:
+      summary: "Exec a feature on an opened project"
+      requestBody:
+        description: "Informations about the project and the feature"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExecFeatureRequest'
+      responses:
+        200:
+          description: "Feature executed"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExecFeatureResponse'
+        404:
+          description: "Path of project do not exists or is not opened"
+        400:
+          description: "Bad request: Feature do not exsist for the project"
+
+  /api/move:
+    post:
+      summary: "Move a file or a folder"
+      requestBody:
+        description: "The node and the source"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MoveRequest'
+      responses:
+        200:
+          description: "Node moved to destination"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NodeResponse'
+        404:
+          description: "Path of one of the nodes do not exists"
+        400:
+          description: "Bad request"
+        403:
+          description: "Forbidden: Could not access one of the nodes"
+
+  /api/update:
+    post:
+      summary: "Update a file"
+      requestBody:
+        description: "The informations about the file and the content to add"
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateRequest'
+      responses:
+        200:
+          description: "File updated"
+        400:
+          description: "Bad request"
+
+components:
+  schemas:
+    PathRequest:
+      type: object
+      properties:
+        path:
+          type: string
+    ExecFeatureRequest:
+      type: object
+      properties:
+        feature:
+          type: string
+        params:
+          type: array
+          items:
+            type: string
+        project:
+          type: string
+    MoveRequest:
+      type: object
+      properties:
+        src:
+          type: string
+        dst:
+          type: string
+    UpdateRequest:
+      type: object
+      properties:
+        path:
+          type: string
+        from:
+          type: integer
+        to:
+          type: integer
+        content:
+          type: string
+    ProjectResponse:
+      type: object
+      properties:
+        project:
+          type: object
+    NodeResponse:
+      type: object
+      properties:
+        node:
+          type: object
+    ExecFeatureResponse:
+      type: object
+      properties:
+        ExecutionReport:
+          type: object

@@ -1,0 +1,4 @@
+Arthur Courselle  <arthur.courselle@epita.fr>
+Simon Riou        <simon.riou@epita.fr>
+Antoine Jouy      <antoine.jouy@epita.fr>
+Yohan Canac       <yohan.canac@epita.fr>

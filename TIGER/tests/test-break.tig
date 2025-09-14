@@ -1,0 +1,10 @@
+let
+  var tmp := 1
+in
+  for i := 10 to 1 do
+    (
+      tmp := tmp + 1;
+      print_int(i);
+      break
+    )
+end
