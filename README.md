@@ -10,17 +10,17 @@ If you are an EPITA student, you are **not allowed** to access or use this repos
 
 ## 📂 Projects by Date
 
-### 🔹 Malloc  
-- **Period**: November 6 – 11, 2023  
-- **Type**: Solo project  
-- **Description**: Reimplementation of the `malloc, calloc, free...` functions (dynamic memory allocation) with bucket list style.
-
----
-
 ### 🔹 Piscine-C-SHELL  
 - **Period**: October 2 – October 19, 2023  
 - **Type**: Solo bootcamp-style  
 - **Description**: Series of intensive C programming and shell exercises.  
+
+---
+
+### 🔹 Malloc  
+- **Period**: November 6 – 11, 2023  
+- **Type**: Solo project  
+- **Description**: Reimplementation of the `malloc, calloc, free...` functions (dynamic memory allocation) with bucket list style.
 
 ---
 
