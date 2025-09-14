@@ -1,0 +1,9 @@
+dependencies:
+  espressif/asio: "*"
+  bblanchon/arduinojson: "^6.21.3"
+  jgraulle/esp-idf-cxx:
+    git: git@gitlab.cri.epita.fr:jeremie.graulle/esp-idf-cxx.git
+  idf:
+    version: '>=5.0'
+  espressif/asio: "*"
+  bblanchon/arduinojson: "^6.21.3"
