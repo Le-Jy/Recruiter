@@ -1,0 +1,156 @@
+{
+  "mqtt": {
+    "client_name": "localhost",
+    "topic_name": "topic_ssie",
+    "broker": "localhost",
+    "port": 1883,
+    "login": "admin",
+    "password": "public",
+    "message_rate_second": 0.1,
+    "nb_messages": 100,
+    "vehicles": [
+      {
+        "vehicle_type": "TER",
+        "protocol": 1,
+        "pnb_interval": [0, 343],
+        "initial_lat": 43.6043,
+        "initial_long": 1.4437,
+        "speed_interval": [0, 80],
+        "consumption_interval": [0, 25],
+        "ids": [
+          "VF7VDA5BABA602430",
+          "VF7VDA5BABA602431",
+          "VF7VDA5BABA602432",
+          "VF7VDA5BABA602433"
+        ]
+      },
+      {
+        "vehicle_type": "Tramway",
+        "protocol": 1,
+        "pnb_interval": [0, 300],
+        "initial_lat": 43.6043,
+        "initial_long": 1.4437,
+        "speed_interval": [0, 30],
+        "consumption_interval": [0, 140],
+        "ids": [
+          "VF7VDA55662202434",
+          "VF7VDA55662202435",
+          "VF7VDA55662202436",
+          "VF7VDA55662202437",
+          "VF7VDA55662202438",
+          "VF7VDA55662202439",
+          "VF7VDA5566220243A"
+        ]
+      },
+      {
+        "vehicle_type": "Metro",
+        "protocol": 3,
+        "pnb_interval": [0, 224],
+        "speed_interval": [0, 50],
+        "consumption_interval": [0, 100],
+        "ids": [
+          "VF7VSIETLS6740687",
+          "VF7VSIETLS6740688",
+          "VF7VSIETLS6740689",
+          "VF7VSIETLS6740690",
+          "VF7VSIETLS6740691",
+          "VF7VSIETLS6740692"
+        ]
+      },
+      {
+        "vehicle_type": "Bus standards",
+        "protocol": 2,
+        "message_types": [125, 14],
+        "pnb_message_type": 125,
+        "pnb_interval": [0, 63],
+        "initial_lat": 43.6043,
+        "initial_long": 1.4437,
+        "gearbox_interval": [1, 6],
+        "speed_interval": [0, 90],
+        "consumption_interval": [0, 120],
+        "ids": [
+          "VF7VDF0000DFD5961",
+          "VF7VDF0000DFD5962",
+          "VF7VDF0000DFD5963",
+          "VF7VDF0000DFD5964"
+        ]
+      },
+      {
+        "vehicle_type": "Bus articulés",
+        "protocol": 2,
+        "message_types": [125, 14, 56, 900],
+        "pnb_message_type": 125,
+        "pnb_interval": [0, 140],
+        "initial_lat": 43.6043,
+        "initial_long": 1.4437,
+        "gearbox_interval": [1, 7],
+        "speed_interval": [0, 70],
+        "consumption_interval": [0, 150],
+        "ids": [
+          "VF7VDF0000DFD5965",
+          "VF7VDF0000DFD5966",
+          "VF7VDF0000DFD5967",
+          "VF7VDF0000DFD5968"
+        ]
+      },
+      {
+        "vehicle_type": "Mini Bus",
+        "protocol": 2,
+        "message_types": [125, 14, 56, 123],
+        "pnb_message_type": 125,
+        "pnb_interval": [0, 20],
+        "initial_lat": 43.6043,
+        "initial_long": 1.4437,
+        "gearbox_interval": [1, 6],
+        "speed_interval": [0, 70],
+        "consumption_interval": [0, 50],
+        "ids": [
+          "VF7VDF0000DFD5910",
+          "VF7VDF0000DFD5911",
+          "VF7VDF0000DFD5912",
+          "VF7VDF0000DFD5913"
+        ]
+      },
+      {
+        "vehicle_type": "Téléphérique",
+        "protocol": 2,
+        "message_types": [125, 56],
+        "pnb_message_type": 125,
+        "pnb_interval": [0, 34],
+        "initial_lat": 43.6043,
+        "initial_long": 1.4437,
+        "ids": [
+          "VF7VDF0000DFD5914",
+          "VF7VDF0000DFD5915",
+          "VF7VDF0000DFD5916",
+          "VF7VDF0000DFD5917"
+        ]
+      }
+    ]
+  },
+  "rest": {
+    "url": "http://localhost:8085/ssie/tcs/veh",
+    "message_rate_second": 1,
+    "nb_messages": 100,
+    "vehicles": [
+      {
+        "ids": [
+          "VF7VDF0000DFD5918",
+          "VF7544522FE263521",
+          "VF7VAABB5654E5F54",
+          "VF7VD002596ABCD52",
+          "VF7V1235FEFE56982",
+          "VF7V4549ADBC15212",
+          "VF7CC45D595E245CD",
+          "VF7V958614DD5258D",
+          "VF7VDDEF98AB59DR6",
+          "VF79516DD62156AB9",
+          "VF7VD002596ABCD52",
+          "VF7V521DEB56511A0",
+          "VF7VDF0000DFD591B"
+        ],
+        "pnb_interval": [0, 5]
+      }
+    ]
+  }
+}

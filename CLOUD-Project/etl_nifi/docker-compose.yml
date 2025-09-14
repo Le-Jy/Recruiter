@@ -1,0 +1,21 @@
+services:
+  emqx:
+    image: "emqx:5.8.6"
+    container_name: emqx
+    restart: on-failure:1
+    ports:
+      - 1883:1883
+      - 18083:18083
+  nifi:
+    image: apache/nifi:1.28.1
+    ports:
+      - 8181:8181
+    volumes: 
+      - ./flow:/opt/nifi/nifi-current/flow
+      - ./logs:/opt/nifi/nifi-current/logs
+    environment:
+      - NIFI_WEB_HTTP_PORT=8181
+      - NIFI_SENSITIVE_PROPS_KEY=gqplePYz2R6JskSZ1e5O
+    entrypoint: bash -c "echo Overwriting entrypoint && echo Replace path for flow.xml.gz && sed -i 's#=./conf/flow.xml.gz#=./flow/flow.xml.gz#g' /opt/nifi/nifi-current/conf/nifi.properties && /opt/nifi/scripts/start.sh"
+    stdin_open: true 
+    tty: true
